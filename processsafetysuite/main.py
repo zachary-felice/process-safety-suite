@@ -77,13 +77,19 @@ class StatsFrame(wx.Frame):
 
         pnl = wx.Panel(self)
 
-        st = wx.StaticText(pnl, label="Statistics Panel", pos=(25,25))
+        st = wx.StaticText(pnl, label="Statistics Panel", pos=(25,15))
         font=st.GetFont()
         font.PointSize += 10
         font = font.Bold()
         st.SetFont(font)
 
-        tc = wx.TextCtrl(pnl)
+        font.PointSize += -10
+        oshair = wx.StaticText(pnl, label="OSHA Incident Rate", pos=(25,50))
+        oshair.SetFont(font)
+
+        tcNumLostWorkdays = wx.TextCtrl(pnl, pos=(25,70))
+        tcTotalHoursWorked = wx.TextCtrl(pnl, pos=(25,95))
+
 
         self.makeMenuBar()
 
